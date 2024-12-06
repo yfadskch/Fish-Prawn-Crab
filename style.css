@@ -26,7 +26,11 @@ h1 {
 .title-image {
   width: 100%;
   max-width: 300px;
+  height: auto;
   margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .dice-area {
@@ -92,5 +96,9 @@ h1 {
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 18px; /* Reduce font size for mobile */
+  }
+
+  .title-image {
+    max-width: 50%; /* Adjust image size to 50% of container width */
   }
 }
