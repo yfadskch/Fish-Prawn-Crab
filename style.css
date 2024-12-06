@@ -98,19 +98,16 @@ h1 {
   text-shadow: 1px 1px 3px #000;
 }
 
-.free-credit {
-  margin-bottom: 20px;
-}
-
-.free-credit a {
+.button {
+  margin-top: 20px;
   font-size: 18px;
-  color: #ffb74d;
-  text-decoration: none;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 10px 20px;
+  padding: 10px 30px;
+  background: #ffb74d;
+  border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
-.free-credit a:hover {
-  background: rgba(0, 0, 0, 0.8);
+.button:hover {
+  background: #ffa726;
 }

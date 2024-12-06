@@ -34,55 +34,42 @@ function rollDice() {
   const rollSound = document.getElementById("roll-sound");
   rollSound.play();
 
-  const dice1 = diceSymbols[Math.floor(Math.random() * 6)];
-  const dice2 = diceSymbols[Math.floor(Math.random() * 6)];
-  const dice3 = diceSymbols[Math.floor(Math.random() * 6)];
+  const dice1 = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
+  const dice2 = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
+  const dice3 = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
 
   displayDice(dice1, dice2, dice3);
   calculateResult([dice1, dice2, dice3]);
 }
 
-// Display dice results
+// Display dice results on the page
 function displayDice(dice1, dice2, dice3) {
-  document.getElementById("dice1").textContent = getSymbol(dice1);
-  document.getElementById("dice2").textContent = getSymbol(dice2);
-  document.getElementById("dice3").textContent = getSymbol(dice3);
+  console.log(dice1, dice2, dice3);
 }
 
-// Get symbol for dice type
-function getSymbol(type) {
-  const symbols = {
-    tiger: "🐯",
-    gourd: "🍐",
-    rooster: "🐓",
-    crab: "🦀",
-    fish: "🐟",
-    shrimp: "🦐"
-  };
-  return symbols[type];
-}
-
-// Calculate the result
+// Calculate and display the game result
 function calculateResult(diceResults) {
   let winAmount = 0;
   diceResults.forEach(result => {
     if (bets[result] > 0) {
-      winAmount += bets[result];
+      winAmount += bets[result] * 2; // Double the bet as winning
     }
   });
 
+  // Update balance and display results
   if (winAmount > 0) {
     document.getElementById("result-message").textContent = `You won ${winAmount} chips! 🎉`;
+    balance += winAmount;
   } else {
     document.getElementById("result-message").textContent = "You lost! 😢";
   }
 
-  balance += winAmount;
+  // Reset bets and update balance display
   document.getElementById("balance").textContent = balance;
   resetBets();
 }
 
-// Reset bets
+// Reset all bets to zero after a round
 function resetBets() {
   for (const type in bets) {
     bets[type] = 0;
