@@ -88,34 +88,29 @@ h1 {
   background: #45a049;
 }
 
-.button {
-  margin-top: 20px;
+.result {
+  margin: 20px 0;
   font-size: 18px;
-  padding: 10px 30px;
-  background: #ffb74d;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
-.button:hover {
-  background: #ffa726;
-}
-
-.dice-area {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.dice {
-  font-size: 40px;
-  margin: 10px;
-}
-
-.result-message {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 20px;
+.credits {
+  margin-bottom: 20px;
   text-shadow: 1px 1px 3px #000;
+}
+
+.free-credit {
+  margin-bottom: 20px;
+}
+
+.free-credit a {
+  font-size: 18px;
+  color: #ffb74d;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.free-credit a:hover {
+  background: rgba(0, 0, 0, 0.8);
 }

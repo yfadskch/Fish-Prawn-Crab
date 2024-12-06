@@ -72,12 +72,8 @@ function calculateResult(diceResults) {
   });
 
   if (winAmount > 0) {
-    const winSound = document.getElementById("win-sound");
-    winSound.play();
     document.getElementById("result-message").textContent = `You won ${winAmount} chips! 🎉`;
   } else {
-    const loseSound = document.getElementById("lose-sound");
-    loseSound.play();
     document.getElementById("result-message").textContent = "You lost! 😢";
   }
 
