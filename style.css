@@ -9,16 +9,18 @@ body {
 
 h1 {
   color: #ff6f61;
+  font-size: 24px; /* Smaller title font for better adaptation */
 }
 
 .bet-area, .dice-area {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
   margin-top: 20px;
 }
 
 .bet-area div, .dice-area div {
-  margin: 0 10px;
+  margin: 5px; /* Reduce margins for smaller screens */
 }
 
 button {
@@ -38,7 +40,7 @@ button:hover {
 
 .dice {
   font-size: 50px;
-  margin: 20px;
+  margin: 10px; /* Smaller margins for mobile */
   animation: none;
 }
 
@@ -49,8 +51,8 @@ button:hover {
 }
 
 .symbols-image {
-  width: 80%; /* Adjust width to fit your design */
-  max-width: 600px; /* Limit maximum size */
+  width: 100%; /* Make image take full width */
+  max-width: 400px; /* Limit maximum size */
   height: auto;
   border: 2px solid #ddd;
   border-radius: 10px;
@@ -67,4 +69,28 @@ button:hover {
   font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 20px; /* Smaller title for mobile */
+  }
+
+  button {
+    font-size: 14px; /* Reduce button font size */
+    padding: 8px 15px; /* Adjust padding for smaller screens */
+  }
+
+  .dice {
+    font-size: 40px; /* Smaller dice size for mobile */
+  }
+
+  .symbols-image {
+    max-width: 300px; /* Limit maximum width for smaller screens */
+  }
+
+  .bet-area, .dice-area {
+    flex-direction: column; /* Stack elements vertically on small screens */
+  }
 }
