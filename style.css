@@ -38,26 +38,28 @@ button:hover {
 .dice {
   font-size: 50px;
   margin: 20px;
+  display: inline-block;
   animation: none;
 }
 
-@keyframes roll-animation {
-  0% { transform: rotate(0); }
-  25% { transform: rotate(90deg); }
-  50% { transform: rotate(180deg); }
-  75% { transform: rotate(270deg); }
-  100% { transform: rotate(360deg); }
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
-.button {
-  margin-top: 20px;
-  font-size: 18px;
-  padding: 10px 30px;
-  background: #ffb74d;
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.result-message {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 20px;
+.dice.animate {
+  animation: jump 0.5s ease infinite, spin 0.5s ease infinite;
 }

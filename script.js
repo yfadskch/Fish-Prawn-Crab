@@ -22,28 +22,38 @@ function placeBet(type) {
 }
 
 function rollDice() {
-  const dice1 = diceSymbols[Math.floor(Math.random() * 6)];
-  const dice2 = diceSymbols[Math.floor(Math.random() * 6)];
-  const dice3 = diceSymbols[Math.floor(Math.random() * 6)];
-  
-  // Play roll sound
   const rollSound = document.getElementById("roll-sound");
   rollSound.play();
 
-  displayDice(dice1, dice2, dice3);
-  calculateResult([dice1, dice2, dice3]);
+  const dice1Element = document.getElementById("dice1");
+  const dice2Element = document.getElementById("dice2");
+  const dice3Element = document.getElementById("dice3");
+
+  // Add animation class
+  dice1Element.classList.add("animate");
+  dice2Element.classList.add("animate");
+  dice3Element.classList.add("animate");
+
+  // Random dice results
+  const dice1 = diceSymbols[Math.floor(Math.random() * 6)];
+  const dice2 = diceSymbols[Math.floor(Math.random() * 6)];
+  const dice3 = diceSymbols[Math.floor(Math.random() * 6)];
+
+  setTimeout(() => {
+    // Remove animation and display results
+    dice1Element.classList.remove("animate");
+    dice2Element.classList.remove("animate");
+    dice3Element.classList.remove("animate");
+
+    displayDice(dice1, dice2, dice3);
+    calculateResult([dice1, dice2, dice3]);
+  }, 2000); // 2 seconds animation
 }
 
 function displayDice(dice1, dice2, dice3) {
   document.getElementById("dice1").textContent = getSymbol(dice1);
   document.getElementById("dice2").textContent = getSymbol(dice2);
   document.getElementById("dice3").textContent = getSymbol(dice3);
-  
-  const diceElements = [document.getElementById("dice1"), document.getElementById("dice2"), document.getElementById("dice3")];
-  diceElements.forEach(dice => {
-    dice.style.animation = "roll-animation 1s ease";
-    setTimeout(() => { dice.style.animation = "none"; }, 1000);
-  });
 }
 
 function getSymbol(type) {
@@ -65,7 +75,7 @@ function calculateResult(diceResults) {
       winAmount += bets[result];
     }
   });
-  
+
   if (winAmount > 0) {
     const winSound = document.getElementById("win-sound");
     winSound.play();
@@ -75,7 +85,7 @@ function calculateResult(diceResults) {
     loseSound.play();
     document.getElementById("result-message").textContent = "You lost! 😢";
   }
-  
+
   balance += winAmount;
   document.getElementById("balance").textContent = balance;
   resetBets();
