@@ -3,132 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>鱼虾蟹游戏</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 20px;
-    }
-    .bet-area, .result-area {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .bet-area div, .result-area div {
-      margin: 0 10px;
-    }
-    .dice {
-      font-size: 50px;
-    }
-    .button {
-      margin-top: 20px;
-    }
-  </style>
+  <title>Fish-Shrimp-Crab Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>鱼虾蟹游戏</h1>
-  <p>当前余额：<span id="balance">100</span> 筹码</p>
+  <h1>🎲 Fish-Shrimp-Crab Game 🎲</h1>
+  <p>Current Balance: <span id="balance">100</span> Chips</p>
+
   <div class="bet-area">
     <div>
-      <button onclick="placeBet('fish')">🐟 鱼</button>
-      <p>下注：<span id="fish-bet">0</span></p>
+      <button onclick="placeBet('fish')">🐟 Fish</button>
+      <p>Bet: <span id="fish-bet">0</span></p>
     </div>
     <div>
-      <button onclick="placeBet('shrimp')">🦐 虾</button>
-      <p>下注：<span id="shrimp-bet">0</span></p>
+      <button onclick="placeBet('shrimp')">🦐 Shrimp</button>
+      <p>Bet: <span id="shrimp-bet">0</span></p>
     </div>
     <div>
-      <button onclick="placeBet('crab')">🦀 蟹</button>
-      <p>下注：<span id="crab-bet">0</span></p>
+      <button onclick="placeBet('crab')">🦀 Crab</button>
+      <p>Bet: <span id="crab-bet">0</span></p>
     </div>
     <div>
-      <button onclick="placeBet('rooster')">🐓 鸡</button>
-      <p>下注：<span id="rooster-bet">0</span></p>
+      <button onclick="placeBet('rooster')">🐓 Rooster</button>
+      <p>Bet: <span id="rooster-bet">0</span></p>
     </div>
     <div>
-      <button onclick="placeBet('coin')">💰 钱币</button>
-      <p>下注：<span id="coin-bet">0</span></p>
+      <button onclick="placeBet('coin')">💰 Coin</button>
+      <p>Bet: <span id="coin-bet">0</span></p>
     </div>
     <div>
-      <button onclick="placeBet('gourd')">🍐 葫芦</button>
-      <p>下注：<span id="gourd-bet">0</span></p>
+      <button onclick="placeBet('gourd')">🍐 Gourd</button>
+      <p>Bet: <span id="gourd-bet">0</span></p>
     </div>
   </div>
-  <button class="button" onclick="rollDice()">投骰子 🎲</button>
-  <div class="result-area">
+
+  <button class="button" onclick="rollDice()">Roll Dice 🎲</button>
+  
+  <div class="dice-area">
     <div id="dice1" class="dice">🎲</div>
     <div id="dice2" class="dice">🎲</div>
     <div id="dice3" class="dice">🎲</div>
   </div>
+
   <p id="result-message"></p>
-  <script>
-    let balance = 100;
-    const bets = {
-      fish: 0,
-      shrimp: 0,
-      crab: 0,
-      rooster: 0,
-      coin: 0,
-      gourd: 0
-    };
 
-    const diceSymbols = ['fish', 'shrimp', 'crab', 'rooster', 'coin', 'gourd'];
+  <audio id="roll-sound" src="roll.mp3"></audio>
+  <audio id="win-sound" src="win.mp3"></audio>
+  <audio id="lose-sound" src="lose.mp3"></audio>
 
-    function placeBet(type) {
-      if (balance > 0) {
-        bets[type]++;
-        balance--;
-        document.getElementById(`${type}-bet`).textContent = bets[type];
-        document.getElementById("balance").textContent = balance;
-      } else {
-        alert("余额不足！");
-      }
-    }
-
-    function rollDice() {
-      const dice1 = diceSymbols[Math.floor(Math.random() * 6)];
-      const dice2 = diceSymbols[Math.floor(Math.random() * 6)];
-      const dice3 = diceSymbols[Math.floor(Math.random() * 6)];
-      
-      document.getElementById("dice1").textContent = getSymbol(dice1);
-      document.getElementById("dice2").textContent = getSymbol(dice2);
-      document.getElementById("dice3").textContent = getSymbol(dice3);
-
-      calculateResult([dice1, dice2, dice3]);
-    }
-
-    function getSymbol(type) {
-      const symbols = {
-        fish: "🐟",
-        shrimp: "🦐",
-        crab: "🦀",
-        rooster: "🐓",
-        coin: "💰",
-        gourd: "🍐"
-      };
-      return symbols[type];
-    }
-
-    function calculateResult(diceResults) {
-      let winAmount = 0;
-      diceResults.forEach(result => {
-        if (bets[result] > 0) {
-          winAmount += bets[result];
-        }
-      });
-      balance += winAmount;
-      document.getElementById("balance").textContent = balance;
-      document.getElementById("result-message").textContent = winAmount > 0 ? `你赢了 ${winAmount} 筹码！` : "很遗憾，你输了！";
-      resetBets();
-    }
-
-    function resetBets() {
-      for (const type in bets) {
-        bets[type] = 0;
-        document.getElementById(`${type}-bet`).textContent = 0;
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

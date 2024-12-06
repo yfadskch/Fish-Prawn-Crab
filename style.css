@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+  background: linear-gradient(120deg, #ffecd2, #fcb69f);
+  color: #333;
+}
+
+h1 {
+  color: #ff6f61;
+}
+
+.bet-area, .dice-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.bet-area div, .dice-area div {
+  margin: 0 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #e55d4f;
+}
+
+.dice {
+  font-size: 50px;
+  margin: 20px;
+  animation: none;
+}
+
+@keyframes roll-animation {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(90deg); }
+  50% { transform: rotate(180deg); }
+  75% { transform: rotate(270deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.button {
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 10px 30px;
+  background: #ffb74d;
+}
+
+.result-message {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
