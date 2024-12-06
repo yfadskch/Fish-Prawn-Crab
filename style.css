@@ -9,12 +9,26 @@ body {
 
 h1 {
   color: #ff6f61;
-  font-size: 24px; /* Smaller title font for better adaptation */
+  font-size: 20px; /* Optimized for mobile */
   text-align: center;
+  margin-bottom: 10px;
+}
+
+.game-image {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.symbols-image {
+  width: 100%; /* Full width for mobile */
+  max-width: 400px; /* Limit maximum size */
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 10px;
 }
 
 .bet-area {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .bet-row {
@@ -24,7 +38,7 @@ h1 {
 }
 
 .bet-row button {
-  margin: 0 10px;
+  margin: 5px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
@@ -46,7 +60,7 @@ h1 {
 }
 
 .dice {
-  font-size: 50px;
+  font-size: 40px; /* Optimized size for mobile */
   margin: 10px;
 }
 
@@ -58,7 +72,7 @@ h1 {
 }
 
 .result-message {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   margin-top: 20px;
 }
@@ -75,6 +89,6 @@ h1 {
   }
 
   .dice {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
