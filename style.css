@@ -12,9 +12,21 @@ body {
   padding: 20px;
 }
 
+.title-area {
+  margin-bottom: 20px;
+}
+
 h1 {
   font-size: 24px;
   color: #ffcc00;
+  margin: 0;
+}
+
+/* Title image styles */
+.title-image {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 10px;
 }
 
 .dice-area {
@@ -74,4 +86,11 @@ h1 {
 
 .button:hover {
   background: #ff9900;
+}
+
+/* Mobile-specific adjustments */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 18px; /* Reduce font size for mobile */
+  }
 }
