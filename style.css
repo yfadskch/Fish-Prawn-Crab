@@ -1,3 +1,4 @@
+/* General styles */
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -38,28 +39,32 @@ button:hover {
 .dice {
   font-size: 50px;
   margin: 20px;
-  display: inline-block;
   animation: none;
 }
 
-@keyframes jump {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+/* Game image styles */
+.game-image {
+  text-align: center;
+  margin: 20px 0;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.symbols-image {
+  width: 80%; /* Adjust width to fit your design */
+  max-width: 600px; /* Limit maximum size */
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 10px;
 }
 
-.dice.animate {
-  animation: jump 0.5s ease infinite, spin 0.5s ease infinite;
+.button {
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 10px 30px;
+  background: #ffb74d;
+}
+
+.result-message {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
 }
