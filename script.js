@@ -14,7 +14,7 @@ function placeBet(type) {
   if (balance > 0) {
     bets[type]++;
     balance--;
-    document.getElementById(`${type}-bet`).textContent = bets[type];
+    console.log(`${type} bet placed!`);
     document.getElementById("balance").textContent = balance;
   } else {
     alert("Not enough balance!");
@@ -81,6 +81,5 @@ function calculateResult(diceResults) {
 function resetBets() {
   for (const type in bets) {
     bets[type] = 0;
-    document.getElementById(`${type}-bet`).textContent = 0;
   }
 }
