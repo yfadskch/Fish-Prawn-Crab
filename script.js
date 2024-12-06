@@ -1,4 +1,5 @@
 let balance = 100;
+let currentChip = 10; // Default chip value
 const bets = {
   tiger: 0,
   gourd: 0,
@@ -10,23 +11,28 @@ const bets = {
 
 const diceSymbols = ['tiger', 'gourd', 'rooster', 'crab', 'fish', 'shrimp'];
 
+// Select a chip value
+function selectChip(value) {
+  currentChip = value;
+  console.log(`Current chip set to ${value}`);
+}
+
+// Place a bet
 function placeBet(type) {
-  if (balance > 0) {
-    bets[type]++;
-    balance--;
+  if (balance >= currentChip) {
+    bets[type] += currentChip;
+    balance -= currentChip;
+    document.getElementById(`${type}-bet`).textContent = `Bet: ${bets[type]}`;
     document.getElementById("balance").textContent = balance;
   } else {
     alert("Not enough balance!");
   }
 }
 
+// Roll the dice
 function rollDice() {
   const rollSound = document.getElementById("roll-sound");
   rollSound.play();
-
-  const dice1Element = document.getElementById("dice1");
-  const dice2Element = document.getElementById("dice2");
-  const dice3Element = document.getElementById("dice3");
 
   const dice1 = diceSymbols[Math.floor(Math.random() * 6)];
   const dice2 = diceSymbols[Math.floor(Math.random() * 6)];
@@ -36,12 +42,14 @@ function rollDice() {
   calculateResult([dice1, dice2, dice3]);
 }
 
+// Display dice results
 function displayDice(dice1, dice2, dice3) {
   document.getElementById("dice1").textContent = getSymbol(dice1);
   document.getElementById("dice2").textContent = getSymbol(dice2);
   document.getElementById("dice3").textContent = getSymbol(dice3);
 }
 
+// Get symbol for dice type
 function getSymbol(type) {
   const symbols = {
     tiger: "🐯",
@@ -54,6 +62,7 @@ function getSymbol(type) {
   return symbols[type];
 }
 
+// Calculate the result
 function calculateResult(diceResults) {
   let winAmount = 0;
   diceResults.forEach(result => {
@@ -77,8 +86,10 @@ function calculateResult(diceResults) {
   resetBets();
 }
 
+// Reset bets
 function resetBets() {
   for (const type in bets) {
     bets[type] = 0;
+    document.getElementById(`${type}-bet`).textContent = `Bet: 0`;
   }
 }

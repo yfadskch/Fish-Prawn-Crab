@@ -9,8 +9,27 @@ body {
 
 h1 {
   color: #ff6f61;
-  font-size: 20px; /* Optimized for mobile */
+  font-size: 20px;
   margin-bottom: 10px;
+}
+
+.chip-selection {
+  margin-bottom: 15px;
+}
+
+.chip-selection button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.chip-selection button:hover {
+  background: #45a049;
 }
 
 .game-image {
@@ -19,11 +38,9 @@ h1 {
 }
 
 .symbols-image {
-  width: 100%; /* Full width for mobile */
-  max-width: 300px; /* Limit maximum size for better display */
+  width: 100%;
+  max-width: 300px;
   height: auto;
-  border: 2px solid #ddd;
-  border-radius: 10px;
 }
 
 .bet-area {
@@ -34,6 +51,7 @@ h1 {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
+  align-items: center;
 }
 
 .bet-row button {
@@ -45,11 +63,16 @@ h1 {
   color: white;
   border: none;
   border-radius: 5px;
-  transition: background 0.3s ease;
 }
 
 .bet-row button:hover {
   background: #e55d4f;
+}
+
+.bet-row span {
+  margin-left: 10px;
+  font-size: 16px;
+  color: #333;
 }
 
 .dice-area {
@@ -59,7 +82,7 @@ h1 {
 }
 
 .dice {
-  font-size: 40px; /* Optimized size for mobile */
+  font-size: 40px;
   margin: 10px;
 }
 
@@ -74,20 +97,4 @@ h1 {
   font-size: 18px;
   font-weight: bold;
   margin-top: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 18px; /* Smaller title for mobile */
-  }
-
-  button {
-    font-size: 14px;
-    padding: 8px 15px;
-  }
-
-  .dice {
-    font-size: 30px;
-  }
 }
