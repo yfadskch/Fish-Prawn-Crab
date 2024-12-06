@@ -14,7 +14,6 @@ function placeBet(type) {
   if (balance > 0) {
     bets[type]++;
     balance--;
-    console.log(`${type} bet placed!`);
     document.getElementById("balance").textContent = balance;
   } else {
     alert("Not enough balance!");
