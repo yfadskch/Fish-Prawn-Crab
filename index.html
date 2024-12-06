@@ -11,9 +11,11 @@
     <!-- Game Title -->
     <h1>🎲 Fish-Shrimp-Crab Game 🎲</h1>
 
-    <!-- Game Image -->
-    <div class="game-image">
-      <img src="asdasda1231321.png" alt="Game Symbols" class="symbols-image">
+    <!-- Dice Results -->
+    <div class="dice-area">
+      <div id="dice1" class="dice">🎲</div>
+      <div id="dice2" class="dice">🎲</div>
+      <div id="dice3" class="dice">🎲</div>
     </div>
 
     <!-- Betting Buttons -->
@@ -38,21 +40,18 @@
       <button onclick="selectChip(50)">50</button>
     </div>
 
-    <!-- Current Game Result -->
-    <div class="result">
-      <p id="result-message">Game Result: None</p>
-    </div>
-
-    <!-- Credits and Points -->
-    <div class="credits">
-      <p>Credit: <span id="balance">100</span></p>
-    </div>
-
     <!-- Roll Dice Button -->
     <button class="button" onclick="rollDice()">Roll Dice 🎲</button>
+
+    <!-- Game Result -->
+    <p id="result-message">Game Result: None</p>
+    <p>Credit: <span id="balance">100</span></p>
   </div>
 
   <audio id="roll-sound" src="roll.mp3"></audio>
+  <audio id="win-sound" src="win.mp3"></audio>
+  <audio id="lose-sound" src="lose.mp3"></audio>
+
   <script src="script.js"></script>
 </body>
 </html>

@@ -4,38 +4,41 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   color: #fff;
-  background: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXpwaGxjYzJ1OHN1eGR3MHR3d2xlcTd1b3JvN2l5NWJiOXEzMjBkbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xytwrhaA1JSbBtgxew/giphy.gif') no-repeat center center fixed;
-  background-size: cover;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 20px;
+  background: #222;
   text-align: center;
 }
 
+.container {
+  padding: 20px;
+}
+
 h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 5px #000;
+  font-size: 24px;
+  color: #ffcc00;
 }
 
-.game-image {
-  margin-bottom: 20px;
+.dice-area {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }
 
-.symbols-image {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
+.dice {
+  font-size: 40px;
+  margin: 0 10px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  background-color: #444;
+  color: #fff;
 }
 
-.bet-area {
-  margin-bottom: 20px;
+.bet-area, .chip-selection {
+  margin: 20px 0;
 }
 
 .bet-row {
@@ -44,70 +47,31 @@ h1 {
   margin-bottom: 10px;
 }
 
-.bet-row button {
+.bet-row button, .chip-selection button {
   margin: 5px;
   padding: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.8);
-  color: #000;
+  background: #555;
+  color: #fff;
   border: none;
   border-radius: 5px;
-  width: 120px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.bet-row button span {
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-.bet-row button:hover {
-  background: rgba(255, 255, 255, 1);
-}
-
-.chip-selection {
-  margin-bottom: 20px;
-}
-
-.chip-selection button {
-  margin: 5px;
-  padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
 }
 
-.chip-selection button:hover {
-  background: #45a049;
-}
-
-.result {
-  margin: 20px 0;
-  font-size: 18px;
-}
-
-.credits {
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 3px #000;
+.bet-row button:hover, .chip-selection button:hover {
+  background: #777;
 }
 
 .button {
-  margin-top: 20px;
+  background: #ffcc00;
+  color: #222;
   font-size: 18px;
-  padding: 10px 30px;
-  background: #ffb74d;
   border: none;
   border-radius: 5px;
+  padding: 10px 20px;
   cursor: pointer;
 }
 
 .button:hover {
-  background: #ffa726;
+  background: #ff9900;
 }
