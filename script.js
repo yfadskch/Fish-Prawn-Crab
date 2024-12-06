@@ -31,20 +31,45 @@ function placeBet(type) {
 
 // Roll the dice
 function rollDice() {
+  // Play dice rolling sound
   const rollSound = document.getElementById("roll-sound");
   rollSound.play();
 
+  // Generate random dice results
   const dice1 = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
   const dice2 = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
   const dice3 = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
 
+  // Display the dice results
   displayDice(dice1, dice2, dice3);
+
+  // Calculate the game result based on dice outcomes
   calculateResult([dice1, dice2, dice3]);
 }
 
 // Display dice results on the page
 function displayDice(dice1, dice2, dice3) {
-  console.log(dice1, dice2, dice3);
+  // Get emoji representation for dice results
+  const dice1Symbol = getSymbol(dice1);
+  const dice2Symbol = getSymbol(dice2);
+  const dice3Symbol = getSymbol(dice3);
+
+  // Display results in result-message
+  const resultMessage = `Dice Results: ${dice1Symbol}, ${dice2Symbol}, ${dice3Symbol}`;
+  document.getElementById("result-message").textContent = resultMessage;
+}
+
+// Get the emoji symbol for each dice result
+function getSymbol(type) {
+  const symbols = {
+    tiger: "🐯",
+    gourd: "🍐",
+    rooster: "🐓",
+    crab: "🦀",
+    fish: "🐟",
+    shrimp: "🦐"
+  };
+  return symbols[type];
 }
 
 // Calculate and display the game result
@@ -58,10 +83,10 @@ function calculateResult(diceResults) {
 
   // Update balance and display results
   if (winAmount > 0) {
-    document.getElementById("result-message").textContent = `You won ${winAmount} chips! 🎉`;
+    document.getElementById("result-message").textContent += `\nYou won ${winAmount} chips! 🎉`;
     balance += winAmount;
   } else {
-    document.getElementById("result-message").textContent = "You lost! 😢";
+    document.getElementById("result-message").textContent += `\nYou lost! 😢`;
   }
 
   // Reset bets and update balance display
