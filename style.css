@@ -13,44 +13,108 @@ body {
   padding: 20px;
 }
 
+.title-area {
+  margin-bottom: 20px;
+}
+
 h1 {
   font-size: 24px;
   color: #ffcc00;
   margin: 0;
 }
 
-.button {
-  background: #ffcc00;
-  color: #222;
-  font-size: 18px;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
+/* Title image styles */
+.title-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
   margin-top: 10px;
 }
 
-.button:hover {
-  background: #ff9900;
+.dice-area {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.dice {
+  font-size: 40px;
+  margin: 0 10px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  background-color: #444;
+  color: #fff;
+}
+
+.bet-area, .chip-selection {
+  margin: 10px 0;
+}
+
+.bet-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.bet-row button, .chip-selection button {
+  margin: 3px;
+  padding: 8px;
+  background: #555;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.button {
+  background: #ffcc00;
+  color: #222;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  margin-top: 10px;
 }
 
 .redeem-button {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .free-credit a {
   color: #ffcc00;
-  font-size: 18px;
+  font-size: 14px;
   text-decoration: none;
 }
 
-.free-credit a:hover {
-  color: #ff9900;
-  text-decoration: underline;
-}
-
+/* Mobile-specific adjustments */
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 18px;
+  }
+
+  .title-image {
+    max-width: 50%;
+  }
+
+  .dice {
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .bet-row button, .chip-selection button {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 6px 12px;
   }
 }
