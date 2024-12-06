@@ -55,8 +55,8 @@ function displayDice(dice1, dice2, dice3) {
   const dice3Symbol = getSymbol(dice3);
 
   // Display results in result-message
-  const resultMessage = `Dice Results: ${dice1Symbol}, ${dice2Symbol}, ${dice3Symbol}`;
-  document.getElementById("result-message").textContent = resultMessage;
+  const diceResultMessage = `Dice Results: ${dice1Symbol}, ${dice2Symbol}, ${dice3Symbol}`;
+  document.getElementById("result-message").innerHTML = diceResultMessage;
 }
 
 // Get the emoji symbol for each dice result
@@ -83,10 +83,10 @@ function calculateResult(diceResults) {
 
   // Update balance and display results
   if (winAmount > 0) {
-    document.getElementById("result-message").textContent += `\nYou won ${winAmount} chips! 🎉`;
+    document.getElementById("result-message").innerHTML += `<br>You won ${winAmount} chips! 🎉`;
     balance += winAmount;
   } else {
-    document.getElementById("result-message").textContent += `\nYou lost! 😢`;
+    document.getElementById("result-message").innerHTML += `<br>You lost! 😢`;
   }
 
   // Reset bets and update balance display
