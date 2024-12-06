@@ -22,7 +22,7 @@ function placeBet(type) {
   if (balance >= currentChip) {
     bets[type] += currentChip;
     balance -= currentChip;
-    document.getElementById(`${type}-bet`).textContent = `Bet: ${bets[type]}`;
+    document.getElementById(`${type}-bet`).textContent = bets[type];
     document.getElementById("balance").textContent = balance;
   } else {
     alert("Not enough balance!");
@@ -90,6 +90,6 @@ function calculateResult(diceResults) {
 function resetBets() {
   for (const type in bets) {
     bets[type] = 0;
-    document.getElementById(`${type}-bet`).textContent = `Bet: 0`;
+    document.getElementById(`${type}-bet`).textContent = `0`;
   }
 }

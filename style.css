@@ -51,28 +51,32 @@ h1 {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
-  align-items: center;
 }
 
 .bet-row button {
   margin: 5px;
-  padding: 10px 20px;
+  padding: 10px;
   font-size: 16px;
   cursor: pointer;
   background: #ff6f61;
   color: white;
   border: none;
   border-radius: 5px;
+  width: 120px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bet-row button span {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #fff;
 }
 
 .bet-row button:hover {
   background: #e55d4f;
-}
-
-.bet-row span {
-  margin-left: 10px;
-  font-size: 16px;
-  color: #333;
 }
 
 .dice-area {
