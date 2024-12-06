@@ -10,20 +10,21 @@ body {
 h1 {
   color: #ff6f61;
   font-size: 24px; /* Smaller title font for better adaptation */
+  text-align: center;
 }
 
-.bet-area, .dice-area {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+.bet-area {
   margin-top: 20px;
 }
 
-.bet-area div, .dice-area div {
-  margin: 5px; /* Reduce margins for smaller screens */
+.bet-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
-button {
+.bet-row button {
+  margin: 0 10px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
@@ -34,28 +35,19 @@ button {
   transition: background 0.3s ease;
 }
 
-button:hover {
+.bet-row button:hover {
   background: #e55d4f;
+}
+
+.dice-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .dice {
   font-size: 50px;
-  margin: 10px; /* Smaller margins for mobile */
-  animation: none;
-}
-
-/* Game image styles */
-.game-image {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.symbols-image {
-  width: 100%; /* Make image take full width */
-  max-width: 400px; /* Limit maximum size */
-  height: auto;
-  border: 2px solid #ddd;
-  border-radius: 10px;
+  margin: 10px;
 }
 
 .button {
@@ -74,23 +66,15 @@ button:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
   h1 {
-    font-size: 20px; /* Smaller title for mobile */
+    font-size: 18px; /* Smaller title for mobile */
   }
 
   button {
-    font-size: 14px; /* Reduce button font size */
-    padding: 8px 15px; /* Adjust padding for smaller screens */
+    font-size: 14px;
+    padding: 8px 15px;
   }
 
   .dice {
-    font-size: 40px; /* Smaller dice size for mobile */
-  }
-
-  .symbols-image {
-    max-width: 300px; /* Limit maximum width for smaller screens */
-  }
-
-  .bet-area, .dice-area {
-    flex-direction: column; /* Stack elements vertically on small screens */
+    font-size: 40px;
   }
 }

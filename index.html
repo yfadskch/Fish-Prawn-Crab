@@ -15,31 +15,27 @@
     <img src="asdasda1231321.png" alt="Game Symbols" class="symbols-image">
   </div>
 
+  <!-- Betting buttons arranged into two rows -->
   <div class="bet-area">
-    <div>
-      <button onclick="placeBet('fish')">🐟 Fish</button>
-      <p>Bet: <span id="fish-bet">0</span></p>
-    </div>
-    <div>
-      <button onclick="placeBet('shrimp')">🦐 Shrimp</button>
-      <p>Bet: <span id="shrimp-bet">0</span></p>
-    </div>
-    <div>
-      <button onclick="placeBet('crab')">🦀 Crab</button>
-      <p>Bet: <span id="crab-bet">0</span></p>
-    </div>
-    <div>
-      <button onclick="placeBet('rooster')">🐓 Rooster</button>
-      <p>Bet: <span id="rooster-bet">0</span></p>
-    </div>
-    <div>
-      <button onclick="placeBet('coin')">💰 Coin</button>
-      <p>Bet: <span id="coin-bet">0</span></p>
-    </div>
-    <div>
+    <div class="bet-row">
+      <button onclick="placeBet('tiger')">🐯 Tiger</button>
       <button onclick="placeBet('gourd')">🍐 Gourd</button>
-      <p>Bet: <span id="gourd-bet">0</span></p>
+      <button onclick="placeBet('rooster')">🐓 Rooster</button>
     </div>
+    <div class="bet-row">
+      <button onclick="placeBet('crab')">🦀 Crab</button>
+      <button onclick="placeBet('fish')">🐟 Fish</button>
+      <button onclick="placeBet('shrimp')">🦐 Shrimp</button>
+    </div>
+  </div>
+
+  <div class="bet-display">
+    <p>Tiger Bet: <span id="tiger-bet">0</span></p>
+    <p>Gourd Bet: <span id="gourd-bet">0</span></p>
+    <p>Rooster Bet: <span id="rooster-bet">0</span></p>
+    <p>Crab Bet: <span id="crab-bet">0</span></p>
+    <p>Fish Bet: <span id="fish-bet">0</span></p>
+    <p>Shrimp Bet: <span id="shrimp-bet">0</span></p>
   </div>
 
   <button class="button" onclick="rollDice()">Roll Dice 🎲</button>

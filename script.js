@@ -1,14 +1,14 @@
 let balance = 100;
 const bets = {
-  fish: 0,
-  shrimp: 0,
-  crab: 0,
+  tiger: 0,
+  gourd: 0,
   rooster: 0,
-  coin: 0,
-  gourd: 0
+  crab: 0,
+  fish: 0,
+  shrimp: 0
 };
 
-const diceSymbols = ['fish', 'shrimp', 'crab', 'rooster', 'coin', 'gourd'];
+const diceSymbols = ['tiger', 'gourd', 'rooster', 'crab', 'fish', 'shrimp'];
 
 function placeBet(type) {
   if (balance > 0) {
@@ -29,25 +29,12 @@ function rollDice() {
   const dice2Element = document.getElementById("dice2");
   const dice3Element = document.getElementById("dice3");
 
-  // Add animation class
-  dice1Element.classList.add("animate");
-  dice2Element.classList.add("animate");
-  dice3Element.classList.add("animate");
-
-  // Random dice results
   const dice1 = diceSymbols[Math.floor(Math.random() * 6)];
   const dice2 = diceSymbols[Math.floor(Math.random() * 6)];
   const dice3 = diceSymbols[Math.floor(Math.random() * 6)];
 
-  setTimeout(() => {
-    // Remove animation and display results
-    dice1Element.classList.remove("animate");
-    dice2Element.classList.remove("animate");
-    dice3Element.classList.remove("animate");
-
-    displayDice(dice1, dice2, dice3);
-    calculateResult([dice1, dice2, dice3]);
-  }, 2000); // 2 seconds animation
+  displayDice(dice1, dice2, dice3);
+  calculateResult([dice1, dice2, dice3]);
 }
 
 function displayDice(dice1, dice2, dice3) {
@@ -58,12 +45,12 @@ function displayDice(dice1, dice2, dice3) {
 
 function getSymbol(type) {
   const symbols = {
-    fish: "🐟",
-    shrimp: "🦐",
-    crab: "🦀",
+    tiger: "🐯",
+    gourd: "🍐",
     rooster: "🐓",
-    coin: "💰",
-    gourd: "🍐"
+    crab: "🦀",
+    fish: "🐟",
+    shrimp: "🦐"
   };
   return symbols[type];
 }
