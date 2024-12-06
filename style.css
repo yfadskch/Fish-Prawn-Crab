@@ -1,20 +1,76 @@
 /* General styles */
 body {
+  margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
+  color: #fff;
+  background: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXpwaGxjYzJ1OHN1eGR3MHR3d2xlcTd1b3JvN2l5NWJiOXEzMjBkbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xytwrhaA1JSbBtgxew/giphy.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
   text-align: center;
-  margin: 20px;
-  background: linear-gradient(120deg, #ffecd2, #fcb69f);
-  color: #333;
 }
 
 h1 {
-  color: #ff6f61;
-  font-size: 20px;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px #000;
+}
+
+.game-image {
+  margin-bottom: 20px;
+}
+
+.symbols-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.bet-area {
+  margin-bottom: 20px;
+}
+
+.bet-row {
+  display: flex;
+  justify-content: center;
   margin-bottom: 10px;
 }
 
+.bet-row button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  width: 120px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bet-row button span {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.bet-row button:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
 .chip-selection {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .chip-selection button {
@@ -32,51 +88,18 @@ h1 {
   background: #45a049;
 }
 
-.game-image {
-  text-align: center;
-  margin: 10px 0;
-}
-
-.symbols-image {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-}
-
-.bet-area {
-  margin-top: 15px;
-}
-
-.bet-row {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.bet-row button {
-  margin: 5px;
-  padding: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  background: #ff6f61;
-  color: white;
+.button {
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 10px 30px;
+  background: #ffb74d;
   border: none;
   border-radius: 5px;
-  width: 120px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  cursor: pointer;
 }
 
-.bet-row button span {
-  font-size: 14px;
-  margin-top: 5px;
-  color: #fff;
-}
-
-.bet-row button:hover {
-  background: #e55d4f;
+.button:hover {
+  background: #ffa726;
 }
 
 .dice-area {
@@ -90,15 +113,9 @@ h1 {
   margin: 10px;
 }
 
-.button {
-  margin-top: 20px;
-  font-size: 18px;
-  padding: 10px 30px;
-  background: #ffb74d;
-}
-
 .result-message {
   font-size: 18px;
   font-weight: bold;
   margin-top: 20px;
+  text-shadow: 1px 1px 3px #000;
 }

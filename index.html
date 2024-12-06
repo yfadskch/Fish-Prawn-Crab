@@ -7,45 +7,50 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🎲 Fish-Shrimp-Crab Game 🎲</h1>
-  <p>Current Balance: <span id="balance">100</span> Chips</p>
+  <div class="container">
+    <!-- Game Title -->
+    <h1>🎲 Fish-Shrimp-Crab Game 🎲</h1>
 
-  <!-- Chip selection area -->
-  <div class="chip-selection">
-    <p>Select Your Chip:</p>
-    <button onclick="selectChip(10)">10</button>
-    <button onclick="selectChip(20)">20</button>
-    <button onclick="selectChip(50)">50</button>
-  </div>
-
-  <!-- Add the game symbols image -->
-  <div class="game-image">
-    <img src="asdasda1231321.png" alt="Game Symbols" class="symbols-image">
-  </div>
-
-  <!-- Betting buttons arranged into two rows -->
-  <div class="bet-area">
-    <div class="bet-row">
-      <button onclick="placeBet('tiger')" id="tiger-btn">🐯 Tiger<br><span id="tiger-bet">0</span></button>
-      <button onclick="placeBet('gourd')" id="gourd-btn">🍐 Gourd<br><span id="gourd-bet">0</span></button>
-      <button onclick="placeBet('rooster')" id="rooster-btn">🐓 Rooster<br><span id="rooster-bet">0</span></button>
+    <!-- Game Image -->
+    <div class="game-image">
+      <img src="asdasda1231321.png" alt="Game Symbols" class="symbols-image">
     </div>
-    <div class="bet-row">
-      <button onclick="placeBet('crab')" id="crab-btn">🦀 Crab<br><span id="crab-bet">0</span></button>
-      <button onclick="placeBet('fish')" id="fish-btn">🐟 Fish<br><span id="fish-bet">0</span></button>
-      <button onclick="placeBet('shrimp')" id="shrimp-btn">🦐 Shrimp<br><span id="shrimp-bet">0</span></button>
+
+    <!-- Betting Buttons -->
+    <div class="bet-area">
+      <div class="bet-row">
+        <button onclick="placeBet('tiger')" id="tiger-btn">🐯 Tiger<br><span id="tiger-bet">0</span></button>
+        <button onclick="placeBet('gourd')" id="gourd-btn">🍐 Gourd<br><span id="gourd-bet">0</span></button>
+        <button onclick="placeBet('rooster')" id="rooster-btn">🐓 Rooster<br><span id="rooster-bet">0</span></button>
+      </div>
+      <div class="bet-row">
+        <button onclick="placeBet('crab')" id="crab-btn">🦀 Crab<br><span id="crab-bet">0</span></button>
+        <button onclick="placeBet('fish')" id="fish-btn">🐟 Fish<br><span id="fish-bet">0</span></button>
+        <button onclick="placeBet('shrimp')" id="shrimp-btn">🦐 Shrimp<br><span id="shrimp-bet">0</span></button>
+      </div>
+    </div>
+
+    <!-- Chip Selection -->
+    <div class="chip-selection">
+      <p>Select Your Chip:</p>
+      <button onclick="selectChip(10)">10</button>
+      <button onclick="selectChip(20)">20</button>
+      <button onclick="selectChip(50)">50</button>
+    </div>
+
+    <!-- Roll Dice Button -->
+    <button class="button" onclick="rollDice()">Roll Dice 🎲</button>
+
+    <!-- Result Message -->
+    <p id="result-message"></p>
+
+    <!-- Dice Area -->
+    <div class="dice-area">
+      <div id="dice1" class="dice">🎲</div>
+      <div id="dice2" class="dice">🎲</div>
+      <div id="dice3" class="dice">🎲</div>
     </div>
   </div>
-
-  <button class="button" onclick="rollDice()">Roll Dice 🎲</button>
-  
-  <div class="dice-area">
-    <div id="dice1" class="dice">🎲</div>
-    <div id="dice2" class="dice">🎲</div>
-    <div id="dice3" class="dice">🎲</div>
-  </div>
-
-  <p id="result-message"></p>
 
   <audio id="roll-sound" src="roll.mp3"></audio>
   <audio id="win-sound" src="win.mp3"></audio>
