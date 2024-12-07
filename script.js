@@ -1,4 +1,4 @@
-let balance = 100;
+let balance = 200; // Initialize credit to 200
 let points = 0; // Initialize points to 0
 const bets = {
   tiger: 0,
@@ -28,28 +28,38 @@ function placeBet(type) {
 }
 
 function rollDice() {
-  // Generate random dice results
-  const result1 = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
-  const result2 = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
-  const result3 = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
+  let iterations = 20; // Total iterations for animation
+  let speed = 50; // Initial speed
+  const results = []; // Store final results
 
-  // Update dice display
-  document.getElementById("dice1").textContent = getEmoji(result1);
-  document.getElementById("dice2").textContent = getEmoji(result2);
-  document.getElementById("dice3").textContent = getEmoji(result3);
+  const rollAnimation = setInterval(() => {
+    results[0] = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
+    results[1] = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
+    results[2] = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
 
-  // Calculate total bets
+    document.getElementById("dice1").textContent = getEmoji(results[0]);
+    document.getElementById("dice2").textContent = getEmoji(results[1]);
+    document.getElementById("dice3").textContent = getEmoji(results[2]);
+
+    iterations--;
+    speed += 10; // Gradually slow down the speed
+
+    if (iterations <= 0) {
+      clearInterval(rollAnimation);
+      finalizeRoll(results);
+    }
+  }, speed);
+}
+
+function finalizeRoll(results) {
+  // Calculate total bets and add to points
   const totalBets = Object.values(bets).reduce((sum, bet) => sum + bet, 0);
-
-  // Add points based on total bets
   points += totalBets;
+
   document.getElementById("points").textContent = points;
+  document.getElementById("result-message").textContent = `You rolled: ${getEmoji(results[0])}, ${getEmoji(results[1])}, ${getEmoji(results[2])}.`;
 
-  // Reset bets
   resetBets();
-
-  // Show result message
-  document.getElementById("result-message").textContent = `You rolled: ${getEmoji(result1)}, ${getEmoji(result2)}, ${getEmoji(result3)}.`;
 }
 
 function resetBets() {
