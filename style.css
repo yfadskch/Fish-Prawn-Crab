@@ -23,10 +23,19 @@ h1 {
   margin: 0;
 }
 
+.title-image {
+  width: 100%; /* Default: full width */
+  max-width: 600px; /* Max width for larger screens */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto 20px; /* Center image with margin */
+}
+
+/* Dice area */
 .dice-area {
   display: flex;
   justify-content: center;
-  gap: 10px; /* Horizontal spacing between dice */
+  gap: 10px;
   margin: 20px 0;
 }
 
@@ -43,59 +52,19 @@ h1 {
   color: #fff;
 }
 
-/* Betting Buttons */
-.bet-row button {
-  margin: 5px;
-  padding: 10px;
-  background: #555;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-/* Roll Dice Button */
-.button {
-  background: #ffcc00;
-  color: #222;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  margin-top: 10px;
-}
-
-.redeem-button {
-  margin-top: 20px;
-}
-
-/* Free Credit Link */
-.free-credit a {
-  color: #ffcc00;
-  font-size: 14px;
-  text-decoration: none;
-}
-
 /* Mobile-specific adjustments */
 @media screen and (max-width: 768px) {
+  .title-image {
+    max-width: 80%; /* Scale down for small screens */
+  }
+
   .dice-area {
-    gap: 5px; /* Reduce spacing between dice for small screens */
+    gap: 5px; /* Reduce dice spacing */
   }
 
   .dice {
     font-size: 30px;
     width: 50px;
     height: 50px;
-  }
-
-  .bet-row button {
-    font-size: 12px;
-    padding: 8px;
-  }
-
-  .button {
-    font-size: 14px;
-    padding: 8px 12px;
   }
 }
