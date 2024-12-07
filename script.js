@@ -1,5 +1,5 @@
 let balance = 100;
-let points = 3000; // Default points for redeem rewards
+let points = 0; // Initialize points to 0
 const bets = {
   tiger: 0,
   gourd: 0,
@@ -8,6 +8,7 @@ const bets = {
   fish: 0,
   shrimp: 0
 };
+let currentChip = 10; // Default chip value
 
 const diceSymbols = ['tiger', 'gourd', 'rooster', 'crab', 'fish', 'shrimp'];
 
@@ -27,8 +28,47 @@ function placeBet(type) {
 }
 
 function rollDice() {
-  // Dice roll logic remains unchanged
-  alert("Dice rolled!");
+  // Generate random dice results
+  const result1 = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
+  const result2 = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
+  const result3 = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
+
+  // Update dice display
+  document.getElementById("dice1").textContent = getEmoji(result1);
+  document.getElementById("dice2").textContent = getEmoji(result2);
+  document.getElementById("dice3").textContent = getEmoji(result3);
+
+  // Calculate total bets
+  const totalBets = Object.values(bets).reduce((sum, bet) => sum + bet, 0);
+
+  // Add points based on total bets
+  points += totalBets;
+  document.getElementById("points").textContent = points;
+
+  // Reset bets
+  resetBets();
+
+  // Show result message
+  document.getElementById("result-message").textContent = `You rolled: ${getEmoji(result1)}, ${getEmoji(result2)}, ${getEmoji(result3)}.`;
+}
+
+function resetBets() {
+  for (const key in bets) {
+    bets[key] = 0;
+    document.getElementById(`${key}-bet`).textContent = 0;
+  }
+}
+
+function getEmoji(type) {
+  const emojis = {
+    tiger: "🐯",
+    gourd: "🍐",
+    rooster: "🐓",
+    crab: "🦀",
+    fish: "🐟",
+    shrimp: "🦐"
+  };
+  return emojis[type] || "🎲";
 }
 
 function openRewards() {
