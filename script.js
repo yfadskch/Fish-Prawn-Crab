@@ -27,7 +27,7 @@ function placeBet(type) {
 }
 
 function rollDice() {
-  let iterations = window.innerWidth < 768 ? 15 : 20;
+  let iterations = 20;
   let speed = 50;
   const results = [];
 
