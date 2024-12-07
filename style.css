@@ -73,3 +73,36 @@ h1 {
   font-size: 14px;
   text-decoration: none;
 }
+
+/* Mobile-specific adjustments */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 18px;
+  }
+
+  .title-image {
+    max-width: 80%;
+    margin: 10px auto;
+  }
+
+  .dice-area {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dice {
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .bet-row button {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}

@@ -1,5 +1,5 @@
-let balance = 200; // Initialize credit to 200
-let points = 0; // Initialize points to 0
+let balance = 200;
+let points = 0;
 const bets = {
   tiger: 0,
   gourd: 0,
@@ -8,8 +8,7 @@ const bets = {
   fish: 0,
   shrimp: 0
 };
-let currentChip = 10; // Default chip value
-
+let currentChip = 10;
 const diceSymbols = ['tiger', 'gourd', 'rooster', 'crab', 'fish', 'shrimp'];
 
 function selectChip(value) {
@@ -28,9 +27,9 @@ function placeBet(type) {
 }
 
 function rollDice() {
-  let iterations = 20; // Total iterations for animation
-  let speed = 50; // Initial speed
-  const results = []; // Store final results
+  let iterations = window.innerWidth < 768 ? 15 : 20;
+  let speed = 50;
+  const results = [];
 
   const rollAnimation = setInterval(() => {
     results[0] = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
@@ -42,7 +41,7 @@ function rollDice() {
     document.getElementById("dice3").textContent = getEmoji(results[2]);
 
     iterations--;
-    speed += 10; // Gradually slow down the speed
+    speed += 10;
 
     if (iterations <= 0) {
       clearInterval(rollAnimation);
@@ -52,14 +51,20 @@ function rollDice() {
 }
 
 function finalizeRoll(results) {
-  // Calculate total bets and add to points
   const totalBets = Object.values(bets).reduce((sum, bet) => sum + bet, 0);
   points += totalBets;
-
   document.getElementById("points").textContent = points;
-  document.getElementById("result-message").textContent = `You rolled: ${getEmoji(results[0])}, ${getEmoji(results[1])}, ${getEmoji(results[2])}.`;
 
+  results.forEach((result) => {
+    if (bets[result] > 0) {
+      balance += bets[result] * 2;
+    }
+  });
+
+  document.getElementById("balance").textContent = balance.toFixed(2);
   resetBets();
+
+  document.getElementById("result-message").textContent = `You rolled: ${getEmoji(results[0])}, ${getEmoji(results[1])}, ${getEmoji(results[2])}.`;
 }
 
 function resetBets() {
