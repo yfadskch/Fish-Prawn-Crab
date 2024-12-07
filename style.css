@@ -18,17 +18,18 @@ body {
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 18px;
   color: #ffcc00;
   margin: 0;
+  white-space: nowrap; /* Prevent line wrapping */
 }
 
 .title-image {
-  width: 100%; /* Default: full width */
-  max-width: 600px; /* Max width for larger screens */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%;
+  max-width: 600px;
+  height: auto;
   display: block;
-  margin: 0 auto 20px; /* Center image with margin */
+  margin: 10px auto;
 }
 
 /* Dice area */
@@ -52,19 +53,82 @@ h1 {
   color: #fff;
 }
 
+/* Betting Buttons */
+.bet-row button {
+  margin: 5px;
+  padding: 12px;
+  background: linear-gradient(45deg, #ff7f50, #ff4500);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.bet-row button:hover {
+  background: linear-gradient(45deg, #ff4500, #ff7f50);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+/* Roll Dice and Redeem Rewards Buttons */
+.button {
+  background: #ffcc00;
+  color: #222;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: #ffd700;
+  transform: scale(1.1);
+}
+
+.redeem-button {
+  margin-top: 20px;
+}
+
+/* Free Credit Link */
+.free-credit a {
+  color: #ffcc00;
+  font-size: 14px;
+  text-decoration: none;
+}
+
 /* Mobile-specific adjustments */
 @media screen and (max-width: 768px) {
+  h1 {
+    font-size: 16px;
+  }
+
   .title-image {
-    max-width: 80%; /* Scale down for small screens */
+    max-width: 80%;
   }
 
   .dice-area {
-    gap: 5px; /* Reduce dice spacing */
+    gap: 5px;
   }
 
   .dice {
     font-size: 30px;
     width: 50px;
     height: 50px;
+  }
+
+  .bet-row button {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 8px 12px;
   }
 }
