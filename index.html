@@ -8,34 +8,30 @@
 </head>
 <body>
   <div class="container">
-    <!-- Game Title -->
     <div class="title-area">
       <h1>🎲 Fish-Shrimp-Crab Rewards 🎲</h1>
       <img src="asdasda1231321.png" alt="Game Symbols" class="title-image">
     </div>
 
-    <!-- Dice Results -->
     <div class="dice-area">
       <div id="dice1" class="dice">🎲</div>
       <div id="dice2" class="dice">🎲</div>
       <div id="dice3" class="dice">🎲</div>
     </div>
 
-    <!-- Betting Buttons -->
     <div class="bet-area">
       <div class="bet-row">
-        <button onclick="placeBet('tiger')" id="tiger-btn">🐯 Tiger<br><span id="tiger-bet">0</span></button>
-        <button onclick="placeBet('gourd')" id="gourd-btn">🍐 Gourd<br><span id="gourd-bet">0</span></button>
-        <button onclick="placeBet('rooster')" id="rooster-btn">🐓 Rooster<br><span id="rooster-bet">0</span></button>
+        <button onclick="placeBet('tiger')">🐯 Tiger<br><span id="tiger-bet">0</span></button>
+        <button onclick="placeBet('gourd')">🍐 Gourd<br><span id="gourd-bet">0</span></button>
+        <button onclick="placeBet('rooster')">🐓 Rooster<br><span id="rooster-bet">0</span></button>
       </div>
       <div class="bet-row">
-        <button onclick="placeBet('crab')" id="crab-btn">🦀 Crab<br><span id="crab-bet">0</span></button>
-        <button onclick="placeBet('fish')" id="fish-btn">🐟 Fish<br><span id="fish-bet">0</span></button>
-        <button onclick="placeBet('shrimp')" id="shrimp-btn">🦐 Shrimp<br><span id="shrimp-bet">0</span></button>
+        <button onclick="placeBet('crab')">🦀 Crab<br><span id="crab-bet">0</span></button>
+        <button onclick="placeBet('fish')">🐟 Fish<br><span id="fish-bet">0</span></button>
+        <button onclick="placeBet('shrimp')">🦐 Shrimp<br><span id="shrimp-bet">0</span></button>
       </div>
     </div>
 
-    <!-- Chip Selection -->
     <div class="chip-selection">
       <p>Select Your Chip:</p>
       <button onclick="selectChip(10)">10</button>
@@ -43,18 +39,11 @@
       <button onclick="selectChip(50)">50</button>
     </div>
 
-    <!-- Roll Dice Button -->
     <button class="button" onclick="rollDice()">Roll Dice 🎲</button>
-
-    <!-- Redeem Rewards Button -->
     <button class="button redeem-button" onclick="openRewards()">Redeem Rewards</button>
-
-    <!-- Free Credit Link -->
     <p class="free-credit">
       <a href="https://heylink.me/klking88/" target="_blank">Free Credit Tanpa Deposit</a>
     </p>
-
-    <!-- Game Result -->
     <p id="result-message">Game Result: None</p>
     <p>Credit: <span id="balance">200</span></p>
     <p>Points: <span id="points">0</span></p>
