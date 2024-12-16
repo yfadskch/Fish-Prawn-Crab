@@ -1,73 +1,148 @@
 let balance = 200;
 let points = 0;
+const bets = {
+  tiger: 0,
+  gourd: 0,
+  rooster: 0,
+  crab: 0,
+  fish: 0,
+  shrimp: 0
+};
+let currentChip = 10;
+const diceSymbols = ['tiger', 'gourd', 'rooster', 'crab', 'fish', 'shrimp'];
 
-// 选择筹码
 function selectChip(value) {
   currentChip = value;
 }
 
-// 下注逻辑
 function placeBet(type) {
   if (balance >= currentChip) {
     bets[type] += currentChip;
     balance -= currentChip;
     document.getElementById(`${type}-bet`).textContent = bets[type];
-    updateUI();
+    document.getElementById("balance").textContent = balance;
   } else {
     alert("Not enough balance!");
   }
 }
 
-// 掷骰子逻辑（省略动画保持简洁）
 function rollDice() {
-  const results = ["tiger", "gourd", "shrimp"];
-  results.forEach((result, i) => {
-    document.getElementById(`dice${i + 1}`).textContent = result;
-  });
+  let iterations = 20;
+  let speed = 50;
+  const results = [];
+
+  const rollAnimation = setInterval(() => {
+    results[0] = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
+    results[1] = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
+    results[2] = diceSymbols[Math.floor(Math.random() * diceSymbols.length)];
+
+    document.getElementById("dice1").textContent = getEmoji(results[0]);
+    document.getElementById("dice2").textContent = getEmoji(results[1]);
+    document.getElementById("dice3").textContent = getEmoji(results[2]);
+
+    iterations--;
+    speed += 10;
+
+    if (iterations <= 0) {
+      clearInterval(rollAnimation);
+      finalizeRoll(results);
+    }
+  }, speed);
 }
 
-// 打开奖励弹窗
-function openRewardPopup() {
-  document.getElementById("modal").style.display = "flex";
+function finalizeRoll(results) {
+  const totalBets = Object.values(bets).reduce((sum, bet) => sum + bet, 0);
+  points += totalBets;
+  document.getElementById("points").textContent = points;
+
+  results.forEach((result) => {
+    if (bets[result] > 0) {
+      balance += bets[result] * 2;
+    }
+  });
+
+  document.getElementById("balance").textContent = balance.toFixed(2);
+  resetBets();
+
+  document.getElementById("result-message").textContent = `You rolled: ${getEmoji(results[0])}, ${getEmoji(results[1])}, ${getEmoji(results[2])}.`;
 }
 
-// 关闭弹窗
-document.getElementById("close-modal").addEventListener("click", () => {
-  document.getElementById("modal").style.display = "none";
-  document.getElementById("modal-message").textContent = "";
-});
+function resetBets() {
+  for (const key in bets) {
+    bets[key] = 0;
+    document.getElementById(`${key}-bet`).textContent = 0;
+  }
+}
 
-// 奖励选项
-document.querySelectorAll(".reward-option").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const option = btn.getAttribute("data-option");
-    claimReward(option);
-  });
-});
+function getEmoji(type) {
+  const emojis = {
+    tiger: "🐯",
+    gourd: "🍐",
+    rooster: "🐓",
+    crab: "🦀",
+    fish: "🐟",
+    shrimp: "🦐"
+  };
+  return emojis[type] || "🎲";
+}
 
-function claimReward(option) {
-  let message = "";
-  if (option === "1" && points >= 200) {
+function openRewards() {
+  const reward = prompt(
+    "Choose a reward:\n1. 200 Points: +200 Balance\n2. 1000 Points: Welcome Bonus 60%\n3. 2000 Points: Free 8.88"
+  );
+
+  if (reward === "1" && points >= 200) {
     points -= 200;
     balance += 200;
-    message = "You redeemed 200 points for +200 Balance!";
-  } else if (option === "2" && points >= 1000) {
+    alert("You redeemed +200 Balance!");
+  } else if (reward === "2" && points >= 1000) {
     points -= 1000;
-    balance += 1000;
-    message = "You redeemed 1000 points for Welcome Bonus!";
-  } else if (option === "3" && points >= 3000) {
-    points -= 3000;
+    const bonus = balance * 0.6;
+    balance += bonus;
+    alert(`You redeemed Welcome Bonus! (+${bonus.toFixed(2)} Balance)`);
+  } else if (reward === "3" && points >= 2000) {
+    points -= 2000;
     balance += 8.88;
-    message = "You redeemed 3000 points for Free 8.88!";
+    alert("You redeemed Free 8.88!");
   } else {
-    message = "Not enough points!";
+    alert("Not enough points or invalid option.");
   }
-  document.getElementById("modal-message").textContent = message;
+
   updateUI();
 }
 
-// 更新余额和积分
 function updateUI() {
   document.getElementById("balance").textContent = balance.toFixed(2);
   document.getElementById("points").textContent = points;
+}
+
+// Modal functions
+function openRewardPopup() {
+  document.getElementById('modal').style.display = 'block';
+}
+
+function claimReward(option) {
+  let message = '';
+  if (option === '1' && points >= 200) {
+    points -= 200;
+    balance += 200;
+    message = 'You redeemed 200 points for +200 Balance!';
+  } else if (option === '2' && points >= 1000) {
+    points -= 1000;
+    balance += 1000;
+    message = 'You redeemed 1000 points for Welcome Bonus!';
+  } else if (option === '3' && points >= 2000) {
+    points -= 2000;
+    balance += 8.88;
+    message = 'You redeemed 2000 points for Free 8.88!';
+  } else {
+    message = 'Not enough points to redeem this reward!';
+  }
+
+  document.getElementById('modal-message').textContent = message;
+  updateUI();
+}
+
+function closeRewardPopup() {
+  document.getElementById('modal').style.display = 'none';
 }

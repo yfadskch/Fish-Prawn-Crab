@@ -27,8 +27,6 @@
         <button onclick="placeBet('tiger')" id="tiger-btn">🐯 Tiger<br><span id="tiger-bet">0</span></button>
         <button onclick="placeBet('gourd')" id="gourd-btn">🍐 Gourd<br><span id="gourd-bet">0</span></button>
         <button onclick="placeBet('rooster')" id="rooster-btn">🐓 Rooster<br><span id="rooster-bet">0</span></button>
-      </div>
-      <div class="bet-row">
         <button onclick="placeBet('crab')" id="crab-btn">🦀 Crab<br><span id="crab-bet">0</span></button>
         <button onclick="placeBet('fish')" id="fish-btn">🐟 Fish<br><span id="fish-bet">0</span></button>
         <button onclick="placeBet('shrimp')" id="shrimp-btn">🦐 Shrimp<br><span id="shrimp-bet">0</span></button>
@@ -47,23 +45,28 @@
     <button class="button" onclick="rollDice()">Roll Dice 🎲</button>
 
     <!-- Redeem Rewards Button -->
-    <button class="button redeem-button" onclick="openRewardPopup()">Redeem Rewards</button>
+    <button class="button redeem-button" onclick="openRewards()">Redeem Rewards</button>
+
+    <!-- Free Credit Link -->
+    <p class="free-credit">
+      <a href="https://heylink.me/klking88/" target="_blank">Free Credit Tanpa Deposit</a>
+    </p>
 
     <!-- Game Result -->
     <p id="result-message">Game Result: None</p>
     <p>Credit: <span id="balance">200</span></p>
     <p>Points: <span id="points">0</span></p>
-  </div>
 
-  <!-- Reward Modal -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <p>Choose Your Reward:</p>
-      <button class="reward-option" data-option="1">200 Points: +200 Balance</button>
-      <button class="reward-option" data-option="2">1000 Points: Welcome Bonus</button>
-      <button class="reward-option" data-option="3">3000 Points: Free 8.88</button>
-      <p id="modal-message"></p>
-      <button id="close-modal" class="button close-btn">Close</button>
+    <!-- Reward Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <p>Choose Your Reward:</p>
+        <button class="reward-option" data-option="1">200 Points: +200 Balance</button>
+        <button class="reward-option" data-option="2">1000 Points: Welcome Bonus</button>
+        <button class="reward-option" data-option="3">2000 Points: Free 8.88</button>
+        <button id="close-modal">Close</button>
+        <p id="modal-message"></p>
+      </div>
     </div>
   </div>
 
