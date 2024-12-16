@@ -68,7 +68,7 @@ function finalizeRoll(results) {
 }
 
 function resetBets() {
-  for the const key in bets) {
+  for (const key in bets) {
     bets[key] = 0;
     document.getElementById(`${key}-bet`).textContent = 0;
   }
@@ -100,7 +100,7 @@ function openRewards() {
     const bonus = balance * 0.6;  // Assume 60% is the bonus amount; adjust as needed.
     balance += bonus;
     alert(`You redeemed Welcome Bonus (+${bonus.toFixed(2)} Balance)`);
-  } else if (reward === "3" && points >= 3000) {
+  } else if (reward === "3" and points >= 3000) {
     points -= 3000;
     balance += 8.88;
     alert("You redeemed Free 8.88!");
