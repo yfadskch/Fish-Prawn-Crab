@@ -4,27 +4,39 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   color: #fff;
-  background: url(https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWdqNzE2bGNmdHl5NWY3bDF6M3BweTJrdWEzeWUyeDVmOWxvaTNuNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xytwrhaA1JSbBtgxew/giphy.gif)
+  background: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWdqNzE2bGNmdHl5NWY3bDF6M3BweTJrdWEzeWUyeDVmOWxvaTNuNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xytwrhaA1JSbBtgxew/giphy.gif') no-repeat center center fixed;
   background-size: cover;
   text-align: center;
 }
 
-h1 {
-  color: #ffcc00;
+.container {
+  padding: 10px;
+  max-width: 100%;
 }
 
-.dice-area, .bet-area, .chip-selection {
-  margin: 20px 0;
+h1 {
+  font-size: 20px;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+.dice-area {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px 0;
+  flex-wrap: wrap;
 }
 
 .dice {
-  display: inline-block;
-  font-size: 40px;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid #fff;
   border-radius: 10px;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
   background-color: #444;
 }
 
@@ -32,9 +44,11 @@ h1 {
   background-color: #ffcc00;
   color: #222;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
+  padding: 8px 15px;
+  margin: 5px 0;
   cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
   transition: all 0.3s ease;
 }
 
@@ -54,40 +68,66 @@ h1 {
   background: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
 .modal-content {
   background: #333;
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
   text-align: center;
+  width: 90%;
+  max-width: 400px;
 }
 
 .reward-option {
-  display: block;
-  margin: 10px 0;
   background: #ff7f50;
-  border: none;
-  padding: 10px;
   color: #fff;
+  border: none;
+  margin: 8px 0;
+  padding: 10px;
+  font-size: 14px;
   cursor: pointer;
   border-radius: 5px;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  display: block;
+  width: 100%;
 }
 
 .reward-option:hover {
   background: #ff4500;
-}
-
-#modal-message {
-  color: #ffcc00;
+  transform: scale(1.05);
 }
 
 .close-btn {
   background: #ff0000;
   color: #fff;
+  margin-top: 10px;
 }
 
 .close-btn:hover {
   background: #cc0000;
+}
+
+/* Mobile-specific adjustments */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 18px;
+  }
+
+  .dice {
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .reward-option {
+    font-size: 12px;
+    padding: 8px;
+  }
 }
