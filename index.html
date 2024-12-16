@@ -27,6 +27,8 @@
         <button onclick="placeBet('tiger')" id="tiger-btn">🐯 Tiger<br><span id="tiger-bet">0</span></button>
         <button onclick="placeBet('gourd')" id="gourd-btn">🍐 Gourd<br><span id="gourd-bet">0</span></button>
         <button onclick="placeBet('rooster')" id="rooster-btn">🐓 Rooster<br><span id="rooster-bet">0</span></button>
+      </div>
+      <div class="bet-row">
         <button onclick="placeBet('crab')" id="crab-btn">🦀 Crab<br><span id="crab-bet">0</span></button>
         <button onclick="placeBet('fish')" id="fish-btn">🐟 Fish<br><span id="fish-bet">0</span></button>
         <button onclick="placeBet('shrimp')" id="shrimp-btn">🦐 Shrimp<br><span id="shrimp-bet">0</span></button>
@@ -56,18 +58,6 @@
     <p id="result-message">Game Result: None</p>
     <p>Credit: <span id="balance">200</span></p>
     <p>Points: <span id="points">0</span></p>
-
-    <!-- Reward Modal -->
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <p>Choose Your Reward:</p>
-        <button class="reward-option" data-option="1">200 Points: +200 Balance</button>
-        <button class="reward-option" data-option="2">1000 Points: Welcome Bonus</button>
-        <button class="reward-option" data-option="3">2000 Points: Free 8.88</button>
-        <button id="close-modal">Close</button>
-        <p id="modal-message"></p>
-      </div>
-    </div>
   </div>
 
   <script src="script.js"></script>

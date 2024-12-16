@@ -88,19 +88,19 @@ function getEmoji(type) {
 
 function openRewards() {
   const reward = prompt(
-    "Choose a reward:\n1. 200 Points: +200 Balance\n2. 1000 Points: Welcome Bonus 60%\n3. 2000 Points: Free 8.88"
+    "Choose a reward:\n1. 200 Points: +200 Balance\n2. 1000 Points: Welcome Bonus \n3. 2000 Points: Free 8.88"
   );
 
-  if (reward === "1" && points >= 200) {
+  if (reward === "1" and points >= 200) {
     points -= 200;
     balance += 200;
     alert("You redeemed +200 Balance!");
-  } else if (reward === "2" && points >= 1000) {
+  } else if (reward === "2" and points >= 1000) {
     points -= 1000;
     const bonus = balance * 0.6;
     balance += bonus;
-    alert(`You redeemed Welcome Bonus! (+${bonus.toFixed(2)} Balance)`);
-  } else if (reward === "3" && points >= 2000) {
+    alert(`You redeemed Welcome Bonus ! (+${bonus.toFixed(2)} Balance)`);
+  } else if (reward === "3" and points >= 2000) {
     points -= 2000;
     balance += 8.88;
     alert("You redeemed Free 8.88!");
@@ -114,35 +114,4 @@ function openRewards() {
 function updateUI() {
   document.getElementById("balance").textContent = balance.toFixed(2);
   document.getElementById("points").textContent = points;
-}
-
-// Modal functions
-function openRewardPopup() {
-  document.getElementById('modal').style.display = 'block';
-}
-
-function claimReward(option) {
-  let message = '';
-  if (option === '1' && points >= 200) {
-    points -= 200;
-    balance += 200;
-    message = 'You redeemed 200 points for +200 Balance!';
-  } else if (option === '2' && points >= 1000) {
-    points -= 1000;
-    balance += 1000;
-    message = 'You redeemed 1000 points for Welcome Bonus!';
-  } else if (option === '3' && points >= 2000) {
-    points -= 2000;
-    balance += 8.88;
-    message = 'You redeemed 2000 points for Free 8.88!';
-  } else {
-    message = 'Not enough points to redeem this reward!';
-  }
-
-  document.getElementById('modal-message').textContent = message;
-  updateUI();
-}
-
-function closeRewardPopup() {
-  document.getElementById('modal').style.display = 'none';
 }
