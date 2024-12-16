@@ -1,68 +1,97 @@
-/* 通用样式 */
+/* General styles */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWdqNzE2bGNmdHl5NWY3bDF6M3BweTJrdWEzeWUyeDVmOWxvaTNuNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xytwrhaA1JSbBtgxew/giphy.gif') 
-    no-repeat center center fixed;
+  color: #fff;
+  background: url('asdasda1231321.png') no-repeat center center fixed;
   background-size: cover;
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+.dice-area {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  text-align: center;
-  color: #fff;
+  gap: 10px;
+  margin: 20px 0;
 }
 
-/* 容器样式 */
-.container {
-  background: rgba(0, 0, 0, 0.7); /* 半透明背景 */
+.dice {
+  font-size: 40px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  background-color: #444;
+}
+
+.button {
+  background-color: #ffcc00;
+  color: #222;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: #ffd700;
+  transform: scale(1.1);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #333;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  width: 90%;
-  max-width: 400px; /* 最大宽度适配手机屏幕 */
+  text-align: center;
 }
 
-/* 标题样式 */
-h1 {
-  font-size: 22px;
-  margin-bottom: 20px;
-  color: #ffcc00;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+.reward-option {
+  background: #ff7f50;
+  color: #fff;
+  border: none;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
-/* 图片容器样式 */
-.image-container {
-  display: flex;
-  justify-content: center; /* 水平居中 */
-  align-items: center;     /* 垂直居中 */
-  width: 100%;
-  margin: 0 auto;
+.reward-option:hover {
+  background: #ff4500;
 }
 
-/* 图片样式 */
-.responsive-image {
-  max-width: 100%;          /* 图片最大宽度为容器的100% */
-  height: auto;             /* 等比例缩放 */
-  border: 2px solid #fff;   /* 添加白色边框 */
-  border-radius: 8px;       /* 圆角边框 */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
-  background: #000;         /* 防止图片背景留白 */
-}
-
-/* 手机端优化 */
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 10px;          /* 缩小内边距 */
-  }
-
-  h1 {
-    font-size: 18px;        /* 标题字体变小 */
-  }
-
-  .responsive-image {
-    border: 1px solid #ddd; /* 缩小边框 */
-    max-width: 95%;         /* 宽度适配小屏幕 */
-  }
+.close-btn {
+  background: #ff0000;
+  color: #fff;
 }
