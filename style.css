@@ -4,7 +4,8 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   color: #fff;
-  background: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWdqNzE2bGNmdHl5NWY3bDF6M3BweTJrdWEzeWUyeDVmOWxvaTNuNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xytwrhaA1JSbBtgxew/giphy.gif') no-repeat center center fixed;
+  background: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWdqNzE2bGNmdHl5NWY3bDF6M3BweTJrdWEzeWUyeDVmOWxvaTNuNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xytwrhaA1JSbBtgxew/giphy.gif') 
+    no-repeat center center fixed;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -13,75 +14,54 @@ body {
   text-align: center;
 }
 
-.container {
-  background: rgba(0, 0, 0, 0.8); /* 半透明背景 */
-  border-radius: 10px;
-  padding: 20px;
-  width: 95%;
-  max-width: 400px; /* 设置最大宽度 */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-}
-
-h1 {
-  font-size: 20px;
-  color: #ffcc00;
-  margin-bottom: 15px;
-}
-
-/* Dice area */
-.dice-area {
+/* Container for the grid */
+.image-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin: 10px 0;
+  grid-template-columns: repeat(3, 1fr); /* 三列布局 */
+  gap: 10px; /* 网格之间的间距 */
+  width: 90%;
+  max-width: 400px; /* 最大宽度，适配手机屏幕 */
+  background-color: rgba(0, 0, 0, 0.7); /* 半透明背景，增加层次感 */
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* 添加阴影效果 */
 }
 
-.dice {
-  font-size: 30px;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #444;
-  border-radius: 8px;
-  border: 2px solid #fff;
+/* Grid items (images) */
+.image-grid img {
+  width: 100%; /* 图片占满单元格 */
+  height: auto; /* 等比例缩放 */
+  border: 2px solid #fff; /* 白色边框 */
+  border-radius: 5px; /* 圆角 */
+  object-fit: contain; /* 保证图片完整显示 */
+  background-color: #000; /* 黑色背景，填充空间 */
 }
 
-/* Betting buttons */
-.bet-area button {
-  width: 100%;
-  margin: 5px 0;
-  padding: 8px;
-  font-size: 14px;
-  background: #ff7f50;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  transition: transform 0.3s ease;
-}
-
-.bet-area button:hover {
-  background: #ff4500;
-  transform: scale(1.05);
+/* Title styling */
+h1 {
+  font-size: 24px;
+  color: #ffcc00;
+  margin: 10px 0 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* Buttons */
 .button {
+  display: inline-block;
   background-color: #ffcc00;
   color: #222;
-  padding: 8px 12px;
+  padding: 10px 15px;
   border: none;
   border-radius: 5px;
   font-size: 14px;
-  cursor: pointer;
   margin: 5px;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .button:hover {
   background-color: #ffd700;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* Modal Styles */
@@ -95,27 +75,31 @@ h1 {
   background: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
 .modal-content {
   background: #333;
-  padding: 15px;
+  padding: 20px;
   border-radius: 10px;
   text-align: center;
   width: 90%;
   max-width: 400px;
+  color: #fff;
 }
 
 .reward-option {
-  display: block;
-  margin: 10px auto;
-  padding: 10px;
-  font-size: 14px;
   background: #ff7f50;
   color: #fff;
   border: none;
+  margin: 8px 0;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
   border-radius: 5px;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  display: block;
+  width: 100%;
 }
 
 .reward-option:hover {
@@ -144,18 +128,28 @@ h1 {
   text-decoration: underline;
 }
 
-/* Mobile adjustments */
+/* Mobile-specific adjustments */
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 18px;
   }
-  .dice {
-    font-size: 25px;
-    width: 50px;
-    height: 50px;
+
+  .image-grid {
+    gap: 5px;
+    padding: 5px;
   }
-  .button, .reward-option {
+
+  .image-grid img {
+    border: 1px solid #ddd;
+  }
+
+  .button {
     font-size: 12px;
-    padding: 6px;
+    padding: 6px 10px;
+  }
+
+  .reward-option {
+    font-size: 12px;
+    padding: 8px;
   }
 }
