@@ -47,7 +47,7 @@
     <button class="button" onclick="rollDice()">Roll Dice 🎲</button>
 
     <!-- Redeem Rewards Button -->
-    <button class="button redeem-button" onclick="openRewards()">Redeem Rewards</button>
+    <button class="button redeem-button" onclick="openRewardPopup()">Redeem Rewards</button>
 
     <!-- Free Credit Link -->
     <p class="free-credit">
@@ -58,6 +58,18 @@
     <p id="result-message">Game Result: None</p>
     <p>Credit: <span id="balance">200</span></p>
     <p>Points: <span id="points">0</span></p>
+  </div>
+
+  <!-- Reward Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <p>Choose Your Reward:</p>
+      <button class="reward-option" data-option="1">200 Points: +200 Balance</button>
+      <button class="reward-option" data-option="2">1000 Points: Welcome Bonus</button>
+      <button class="reward-option" data-option="3">3000 Points: Free 8.88</button>
+      <p id="modal-message"></p>
+      <button id="close-modal" class="button close-btn">Close</button>
+    </div>
   </div>
 
   <script src="script.js"></script>

@@ -4,131 +4,90 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   color: #fff;
-  background: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXpwaGxjYzJ1OHN1eGR3MHR3d2xlcTd1b3JvN2l5NWJiOXEzMjBkbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xytwrhaA1JSbBtgxew/giphy.gif') no-repeat center center fixed;
+  background: url('asdasda1231321.png') no-repeat center center fixed;
   background-size: cover;
   text-align: center;
 }
 
-.container {
-  padding: 20px;
-}
-
-.title-area {
-  margin-bottom: 20px;
-}
-
 h1 {
-  font-size: 18px;
   color: #ffcc00;
-  margin: 0;
-  white-space: nowrap; /* Prevent line wrapping */
 }
 
-.title-image {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  display: block;
-  margin: 10px auto;
-}
-
-/* Dice area */
-.dice-area {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+.dice-area, .bet-area, .chip-selection {
   margin: 20px 0;
 }
 
 .dice {
+  display: inline-block;
   font-size: 40px;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: 2px solid #fff;
   border-radius: 10px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
   background-color: #444;
-  color: #fff;
 }
 
-/* Betting Buttons */
-.bet-row button {
-  margin: 5px;
-  padding: 12px;
-  background: linear-gradient(45deg, #ff7f50, #ff4500);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.bet-row button:hover {
-  background: linear-gradient(45deg, #ff4500, #ff7f50);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-  transform: scale(1.05);
-}
-
-/* Roll Dice and Redeem Rewards Buttons */
 .button {
-  background: #ffcc00;
+  background-color: #ffcc00;
   color: #222;
-  font-size: 16px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 10px 20px;
-  margin-top: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .button:hover {
-  background: #ffd700;
-  transform: scale(1.1);
+  background-color: #ffd700;
+  transform: scale(1.05);
 }
 
-.redeem-button {
-  margin-top: 20px;
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
 }
 
-/* Free Credit Link */
-.free-credit a {
+.modal-content {
+  background: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.reward-option {
+  display: block;
+  margin: 10px 0;
+  background: #ff7f50;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.reward-option:hover {
+  background: #ff4500;
+}
+
+#modal-message {
   color: #ffcc00;
-  font-size: 14px;
-  text-decoration: none;
 }
 
-/* Mobile-specific adjustments */
-@media screen and (max-width: 768px) {
-  h1 {
-    font-size: 16px;
-  }
+.close-btn {
+  background: #ff0000;
+  color: #fff;
+}
 
-  .title-image {
-    max-width: 80%;
-  }
-
-  .dice-area {
-    gap: 5px;
-  }
-
-  .dice {
-    font-size: 30px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .bet-row button {
-    font-size: 12px;
-    padding: 10px;
-  }
-
-  .button {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
+.close-btn:hover {
+  background: #cc0000;
 }
