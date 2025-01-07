@@ -92,7 +92,7 @@ function getEmoji(type) {
 
 function openRewards() {
   const reward = prompt(
-    "Choose a reward:\n1. 200 Points: +200 Balance\n2. 1000 Points: Welcome Bonus\n3. Claim Mega Free ID 3.88\n4. 3000 Points: Bonus 8.88"
+    "Choose a reward:\n1. 200 Points: +200 Balance\n2. 1000 Points: Welcome Bonus\n3. 2000 Points: Claim Mega Free ID 3\n4. 3000 Points: Bonus 8.88"
   );
 
   if (reward === "1" && points >= 200) {
@@ -104,9 +104,10 @@ function openRewards() {
     const bonus = balance * 0.6;
     balance += bonus;
     alert(`You redeemed Welcome Bonus (+${bonus.toFixed(2)} Balance)`);
-  } else if (reward === "3") {
+  } else if (reward === "3" && points >= 2000) {
+    points -= 2000;
     const selectedId = freeIds[Math.floor(Math.random() * freeIds.length)];
-    alert(`You claimed Mega Free ID: ${selectedId}`);
+    alert(`You claimed Mega Free ID，Password Aaa111: ${selectedId}`);
   } else if (reward === "4" && points >= 3000) {
     points -= 3000;
     balance += 8.88;
