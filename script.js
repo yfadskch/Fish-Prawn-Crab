@@ -10,6 +10,10 @@ const bets = {
 };
 let currentChip = 10;
 const diceSymbols = ['tiger', 'gourd', 'rooster', 'crab', 'fish', 'shrimp'];
+const freeIds = [
+  "139080554027", "139087189529", "139086377948", "139081340986", "139080143270",
+  "139089466662", "139083400909", "139083898516", "139084859252", "139082736754"
+];
 
 function selectChip(value) {
   currentChip = value;
@@ -88,7 +92,7 @@ function getEmoji(type) {
 
 function openRewards() {
   const reward = prompt(
-    "Choose a reward:\n1. 200 Points: +200 Balance\n2. 1000 Points: Welcome Bonus\n3. 3000 Points: Free 8.88"
+    "Choose a reward:\n1. 200 Points: +200 Balance\n2. 1000 Points: Welcome Bonus\n3. Claim Mega Free ID 3.88\n4. 3000 Points: Bonus 8.88"
   );
 
   if (reward === "1" && points >= 200) {
@@ -97,13 +101,16 @@ function openRewards() {
     alert("You redeemed +200 Balance!");
   } else if (reward === "2" && points >= 1000) {
     points -= 1000;
-    const bonus = balance * 0.6;  // Assume 60% is the bonus amount; adjust as needed.
+    const bonus = balance * 0.6;
     balance += bonus;
     alert(`You redeemed Welcome Bonus (+${bonus.toFixed(2)} Balance)`);
-  } else if (reward === "3" && points >= 3000) {
+  } else if (reward === "3") {
+    const selectedId = freeIds[Math.floor(Math.random() * freeIds.length)];
+    alert(`You claimed Mega Free ID: ${selectedId}`);
+  } else if (reward === "4" && points >= 3000) {
     points -= 3000;
     balance += 8.88;
-    alert("You redeemed Free 8.88!");
+    alert("You redeemed Bonus 8.88!");
   } else {
     alert("Not enough points or invalid option.");
   }
