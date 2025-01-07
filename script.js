@@ -107,7 +107,7 @@ function openRewards() {
   } else if (reward === "3" && points >= 2000) {
     points -= 2000;
     const selectedId = freeIds[Math.floor(Math.random() * freeIds.length)];
-    alert(`You claimed Mega Free ID，Password Aaa111: ${selectedId}`);
+    alert(`You claimed Mega Free ID,Password Aaa111: ${selectedId}`);
   } else if (reward === "4" && points >= 3000) {
     points -= 3000;
     balance += 8.88;
