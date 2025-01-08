@@ -11,8 +11,8 @@ const bets = {
 let currentChip = 10;
 const diceSymbols = ['tiger', 'gourd', 'rooster', 'crab', 'fish', 'shrimp'];
 const freeIds = [
-  "139080554027", "139087189529", "139086377948", "139081340986", "139080143270",
-  "139089466662", "139083400909", "139083898516", "139084859252", "139082736754"
+"01782985599", "01919502502", "01724939501", "01873993524", "01872274274",
+"01190541019", "01280028514", "01037946880", "01686300473", "01875010765"
 ];
 
 function selectChip(value) {
@@ -92,7 +92,7 @@ function getEmoji(type) {
 
 function openRewards() {
   const reward = prompt(
-    "Choose a reward:\n1. 200 Points: +200 Balance\n2. 1000 Points: Welcome Bonus\n3. 2000 Points: Claim Mega Free ID 3\n4. 3000 Points: Bonus 8.88"
+    "Choose a reward:\n1. 200 Points: +200 Balance\n2. 1000 Points: Welcome Bonus\n3. 2000 Points: Claim 3IN1 Free ID 3.88\n4. 3000 Points: Bonus 8.88"
   );
 
   if (reward === "1" && points >= 200) {
@@ -107,7 +107,7 @@ function openRewards() {
   } else if (reward === "3" && points >= 2000) {
     points -= 2000;
     const selectedId = freeIds[Math.floor(Math.random() * freeIds.length)];
-    alert(`You claimed Mega Free ID,Password Aaa111: ${selectedId}`);
+    alert(`You claimed 3IN1 Free ID,Password Aaa111:https://3in1slot.com/ ${selectedId}`);
   } else if (reward === "4" && points >= 3000) {
     points -= 3000;
     balance += 8.88;
